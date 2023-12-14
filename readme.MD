@@ -427,8 +427,12 @@ where
 postgres:13.3: This specifies the Docker image to be used for creating the container. In this case, it's the official PostgreSQL image with version 13.3.
 
 - docker logs postgres
+- docker build -t billingapp --no-cache --build-arg JAR_FILE=target/*.jar .
 Docker:
 
+- docker push [name-of-repository]:[version]: push a imagen to a repository
+- docker pull [name-of-repository]:[version]: pull a imagen to a repository
+- docker run: build a container from image and run it
 - docker image ls: listar
 - docker ps -a: containers status
 - docker ps: active containers
@@ -437,3 +441,5 @@ Docker:
 - docker stop [name]: stop image
 - docker logs [name]: watch logs of the container
 - docker stop $(docker ps -q): stop all the containers
+- docker build -t [name] .: build a docker image from Dockerfile
+- docker tag [name] [new-name]: tag a docker image
