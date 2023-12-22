@@ -446,9 +446,21 @@ Docker:
 - docker inspect [name]: check container
 - docker volume prune: delete every volumen
 - docker exec -it [name] sh
+- docker stats: show me all stats of the containers
+- docker info: show me all info about my docker installation
 
 Docker-Compose:
 
-- docker compose -f [file] up -d: up a docker compose file
-- docker compose -f [file] down: down a docker compose file
+- docker compose -f [file] up -d --force-recreate: up a docker compose file
+- docker compose -f [file] down: stop and delete every docker container built by a docker compose file
+- docker compose -f [file] stop: stop every docker container built by a docker compose file
 - docker compose -f [file] build: build every dependency to a docker compose file
+
+Docker swarn
+
+- docker swarm init: inint docker swarn
+- docker swarm leave --force: leave docker swarn mode
+- docker stack deploy -c [file] [name]: deploy docker swarn file by a name
+- docker stack rm [name]: stop and delete the current stack
+- docker service ls: show me docker files running
+- docker stack ps [name]: show me services in this current stack
